@@ -44,7 +44,6 @@ public class TabActivity extends FragmentActivity {
             }
         });
         hideActionBar();
-
     }
 
     public void swapTabColor(int p) {
