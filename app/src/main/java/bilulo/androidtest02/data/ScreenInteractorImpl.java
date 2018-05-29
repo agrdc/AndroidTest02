@@ -1,8 +1,7 @@
-package bilulo.androidtest02.presenter;
+package bilulo.androidtest02.data;
 
 import com.google.gson.GsonBuilder;
 
-import bilulo.androidtest02.data.Screen;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;

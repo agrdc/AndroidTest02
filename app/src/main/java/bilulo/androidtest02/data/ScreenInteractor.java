@@ -1,4 +1,4 @@
-package bilulo.androidtest02.presenter;
+package bilulo.androidtest02.data;
 
 import bilulo.androidtest02.data.Screen;
 import retrofit2.Call;
