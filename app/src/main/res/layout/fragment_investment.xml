@@ -1,11 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tv_investment"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Fragment Investment"
+        android:text="Fragment Investment"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_investment"
+        tools:text="Fragment Investment" />
+
+    <TextView
+        android:id="@+id/tv_fund_name"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="TextView" />
+
+
+    <TextView
+        android:id="@+id/tv_what_is"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fund_name"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/tv_risk_title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_what_is"
+        tools:text="TextView" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fragment Investment"/>
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <ImageView
+        android:id="@+id/iv_risk01"
+        android:layout_width="40dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_risk02"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline01"
+        app:layout_constraintStart_toStartOf="@+id/guideline01"
+        app:layout_constraintTop_toBottomOf="@+id/tv_risk_title"
+        app:srcCompat="@drawable/imgview_background_risk_01"
+        android:background="@drawable/imgview_background_risk_01"/>
+
+    <ImageView
+        android:id="@+id/iv_risk02"
+        android:layout_width="40dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_risk03"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_risk01"
+        app:layout_constraintTop_toBottomOf="@+id/tv_risk_title"
+        app:srcCompat="@drawable/imgview_background_risk_02"
+        android:background="@drawable/imgview_background_risk_02"/>
+
+    <ImageView
+        android:id="@+id/iv_risk03"
+        android:layout_width="40dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_risk04"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_risk02"
+        app:layout_constraintTop_toBottomOf="@+id/tv_risk_title"
+        app:srcCompat="@drawable/imgview_background_risk_03"
+        android:background="@drawable/imgview_background_risk_03"/>
+
+    <ImageView
+        android:id="@+id/iv_risk04"
+        android:layout_width="40dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_risk05"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_risk03"
+        app:layout_constraintTop_toBottomOf="@+id/tv_risk_title"
+        app:srcCompat="@drawable/imgview_background_risk_04"
+        android:background="@drawable/imgview_background_risk_04"/>
+
+    <ImageView
+        android:id="@+id/iv_risk05"
+        android:layout_width="40dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline02"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_risk04"
+        app:layout_constraintTop_toBottomOf="@+id/tv_risk_title"
+        app:srcCompat="@drawable/imgview_background_risk_05"
+        android:background="@drawable/imgview_background_risk_05"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
 
 </android.support.constraint.ConstraintLayout>

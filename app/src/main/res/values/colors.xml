@@ -8,4 +8,10 @@
 
     <color name="colorRed">#FF0000</color>
     <color name="colorDarkerRed">#D00000</color>
+    <color name="colorRisk1">#34f948</color>
+    <color name="colorRisk2">#42f4a4</color>
+    <color name="colorRisk3">#f7f71d</color>
+    <color name="colorRisk4">#ef9013</color>
+    <color name="colorRisk5">#D00000</color>
 </resources>
+
