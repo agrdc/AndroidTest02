@@ -10,4 +10,10 @@
         tools:text="Fragment Contact"
         android:text="Fragment Contact"/>
 
+    <EditText
+        android:id="@+id/et_test"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        />
+
 </android.support.constraint.ConstraintLayout>
