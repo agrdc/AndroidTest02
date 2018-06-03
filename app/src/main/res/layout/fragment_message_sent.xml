@@ -21,7 +21,7 @@
         app:layout_constraintGuide_percent="0.6" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_contact"
         tools:text="Fragment Contact"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
