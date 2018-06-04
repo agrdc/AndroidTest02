@@ -15,6 +15,7 @@ import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,9 +31,16 @@ import butterknife.ButterKnife;
 
 public class ContactsFragment extends Fragment implements ContactsView {
 
+    private int[] mHiddenTvIds;
+    private int[] mHiddenEtIds;
+
     private DataPresenter mDataPresenter;
+
     @BindView (R.id.cl_contact)
     ConstraintLayout constraintLayout;
+
+    @BindView (R.id.ll_form)
+    LinearLayout linearLayout;
 
     @Nullable
     @Override
@@ -72,11 +80,16 @@ public class ContactsFragment extends Fragment implements ContactsView {
     public void updateUI(Data data) {
         ArrayList<Cell> cells = data.getCells();
         Context context = getContext();
-        ConstraintSet constraintSet = new ConstraintSet();
+        mHiddenTvIds = new int[cells.size()];
+        mHiddenEtIds = new int[cells.size()];
+        int y=0;
         for (int x=0; x<cells.size(); x++) {
             Cell c = cells.get(x);
             if (c.isRequired()) {
                 int type = c.getType();
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                linearLayout.setOrientation(LinearLayout.VERTICAL);
+                params.setMargins(0,(int)c.getTopSpacing(),0,0);
                 switch (type) {
                     case 1:
                         TextView textView = new TextView(context);
@@ -91,11 +104,18 @@ public class ContactsFragment extends Fragment implements ContactsView {
                         }
                         textView.setText(c.getMessage());
                         textView.setId(ViewStub.generateViewId());
-                        constraintLayout.addView(textView,constraintLayout.getChildCount());
-                        constraintSet.clone(constraintLayout);
-                        constraintSet.connect(textView.getId(),ConstraintSet.START, R.id.guideline005, ConstraintSet.START);
-                        constraintSet.connect(textView.getId(),ConstraintSet.TOP,R.id.tv_contact,ConstraintSet.BOTTOM ,10);
-                        constraintSet.applyTo(constraintLayout);
+                        textView.setLayoutParams(params);
+                        editText.setId(ViewStub.generateViewId());
+                        editText.setLayoutParams(params);
+                        if (c.isHidden()) {
+                            mHiddenTvIds[y]=textView.getId();
+                            mHiddenEtIds[y]=editText.getId();
+                            y++;
+                            textView.setVisibility(View.GONE);
+                            editText.setVisibility(View.GONE);
+                        }
+                        linearLayout.addView(textView);
+                        linearLayout.addView(editText);
                     case 2:
 
                 }

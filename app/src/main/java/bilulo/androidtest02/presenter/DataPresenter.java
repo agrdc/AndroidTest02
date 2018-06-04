@@ -1,5 +1,9 @@
 package bilulo.androidtest02.presenter;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+
 import bilulo.androidtest02.data.Data;
 import bilulo.androidtest02.data.DataInteractor;
 import bilulo.androidtest02.ui.ContactsView;
@@ -30,6 +34,7 @@ public class DataPresenter {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
                 if (contactsView!=null) {
+                    Log.w("JSON2 =",new Gson().toJson(response));
                     mData = response.body();
                     contactsView.updateUI(mData);
                 }

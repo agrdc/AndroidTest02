@@ -5,6 +5,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ScreenInteractor {
-        @GET("cells.json")
+        @GET("fund.json")
         Call<Screen> fetchScreen();
 }
