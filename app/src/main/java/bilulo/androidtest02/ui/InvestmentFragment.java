@@ -8,7 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import bilulo.androidtest02.R;
+import bilulo.androidtest02.data.DownInfo;
+import bilulo.androidtest02.data.Info;
 import bilulo.androidtest02.data.Month;
 import bilulo.androidtest02.data.MoreInfo;
 import bilulo.androidtest02.data.Screen;
@@ -95,6 +99,8 @@ public class InvestmentFragment extends Fragment implements InvestmentView {
         Month month = moreInfo.getMonth();
         Year year = moreInfo.getYear();
         TwelveMonths twelveMonths = moreInfo.getTwelveMonths();
+        ArrayList<Info> infoList = screen.getInfo();
+        ArrayList<DownInfo> downInfoList = screen.getDownInfo();
         tvTitle.setText(screen.getTitle());
         tvFundName.setText(screen.getFundName());
         tvWhatIs.setText(screen.getWhatIs());
@@ -107,5 +113,24 @@ public class InvestmentFragment extends Fragment implements InvestmentView {
         tvCDIValueYear.setText(String.valueOf(year.getCDI()));
         tvFundValueTwelveMonths.setText(String.valueOf(twelveMonths.getFund()));
         tvCDIValueTwelveMonths.setText(String.valueOf(twelveMonths.getCDI()));
+        tvInfoData01.setText(infoList.get(0).getData());
+        tvInfoName01.setText(infoList.get(0).getName());
+        tvInfoData02.setText(infoList.get(1).getData());
+        tvInfoName02.setText(infoList.get(1).getName());
+        tvInfoData03.setText(infoList.get(2).getData());
+        tvInfoName03.setText(infoList.get(2).getName());
+        tvInfoData04.setText(infoList.get(3).getData());
+        tvInfoName04.setText(infoList.get(3).getName());
+        tvInfoData05.setText(infoList.get(4).getData());
+        tvInfoName05.setText(infoList.get(4).getName());
+        tvInfoData06.setText(infoList.get(5).getData());
+        tvInfoName06.setText(infoList.get(5).getName());
+        tvInfoData07.setText(infoList.get(6).getData());
+        tvInfoName07.setText(infoList.get(6).getName());
+        tvDownInfoName01.setText(downInfoList.get(0).getName());
+        tvDownInfoName02.setText(downInfoList.get(1).getName());
+        tvDownInfoName03.setText(downInfoList.get(2).getName());
+        tvDownInfoName04.setText(downInfoList.get(3).getName());
+        tvDownInfoName05.setText(downInfoList.get(4).getName());
     }
 }
