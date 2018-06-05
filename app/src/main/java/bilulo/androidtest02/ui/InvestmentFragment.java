@@ -3,16 +3,19 @@ package bilulo.androidtest02.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import bilulo.androidtest02.R;
+import bilulo.androidtest02.data.Month;
+import bilulo.androidtest02.data.MoreInfo;
 import bilulo.androidtest02.data.Screen;
 import bilulo.androidtest02.data.ScreenInteractor;
 import bilulo.androidtest02.data.ScreenInteractorImpl;
+import bilulo.androidtest02.data.TwelveMonths;
+import bilulo.androidtest02.data.Year;
 import bilulo.androidtest02.presenter.ScreenPresenter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +32,33 @@ public class InvestmentFragment extends Fragment implements InvestmentView {
     @BindView(R.id.tv_risk_title) TextView tvRiskTitle;
     @BindView(R.id.tv_info_title) TextView tvInfoTitle;
 
+    @BindView(R.id.tv_fund_value_month) TextView tvFundValueMonth;
+    @BindView(R.id.tv_cdi_value_month) TextView tvCDIValueMonth;
+    @BindView(R.id.tv_fund_value_year) TextView tvFundValueYear;
+    @BindView(R.id.tv_cdi_value_year) TextView tvCDIValueYear;
+    @BindView(R.id.tv_fund_value_twelve_months) TextView tvFundValueTwelveMonths;
+    @BindView(R.id.tv_cdi_value_twelve_months) TextView tvCDIValueTwelveMonths;
+
+    @BindView(R.id.tv_info_name_01) TextView tvInfoName01;
+    @BindView(R.id.tv_info_data_01) TextView tvInfoData01;
+    @BindView(R.id.tv_info_name_02) TextView tvInfoName02;
+    @BindView(R.id.tv_info_data_02) TextView tvInfoData02;
+    @BindView(R.id.tv_info_name_03) TextView tvInfoName03;
+    @BindView(R.id.tv_info_data_03) TextView tvInfoData03;
+    @BindView(R.id.tv_info_name_04) TextView tvInfoName04;
+    @BindView(R.id.tv_info_data_04) TextView tvInfoData04;
+    @BindView(R.id.tv_info_name_05) TextView tvInfoName05;
+    @BindView(R.id.tv_info_data_05) TextView tvInfoData05;
+    @BindView(R.id.tv_info_name_06) TextView tvInfoName06;
+    @BindView(R.id.tv_info_data_06) TextView tvInfoData06;
+    @BindView(R.id.tv_info_name_07) TextView tvInfoName07;
+    @BindView(R.id.tv_info_data_07) TextView tvInfoData07;
+
+    @BindView(R.id.tv_downinfo_name_01) TextView tvDownInfoName01;
+    @BindView(R.id.tv_downinfo_name_02) TextView tvDownInfoName02;
+    @BindView(R.id.tv_downinfo_name_03) TextView tvDownInfoName03;
+    @BindView(R.id.tv_downinfo_name_04) TextView tvDownInfoName04;
+    @BindView(R.id.tv_downinfo_name_05) TextView tvDownInfoName05;
 
     @Nullable
     @Override
@@ -61,12 +91,21 @@ public class InvestmentFragment extends Fragment implements InvestmentView {
 
     @Override
     public void updateUI(Screen screen) {
-        Log.d(LOG_TAG,"teste "+screen.getDefinition());
+        MoreInfo moreInfo = screen.getMoreInfo();
+        Month month = moreInfo.getMonth();
+        Year year = moreInfo.getYear();
+        TwelveMonths twelveMonths = moreInfo.getTwelveMonths();
         tvTitle.setText(screen.getTitle());
         tvFundName.setText(screen.getFundName());
         tvWhatIs.setText(screen.getWhatIs());
         tvDefinition.setText(screen.getDefinition());
         tvRiskTitle.setText(screen.getRiskTitle());
         tvInfoTitle.setText(screen.getInfoTitle());
+        tvFundValueMonth.setText(String.valueOf(month.getFund()));
+        tvCDIValueMonth.setText(String.valueOf(month.getCDI()));
+        tvFundValueYear.setText(String.valueOf(year.getFund()));
+        tvCDIValueYear.setText(String.valueOf(year.getCDI()));
+        tvFundValueTwelveMonths.setText(String.valueOf(twelveMonths.getFund()));
+        tvCDIValueTwelveMonths.setText(String.valueOf(twelveMonths.getCDI()));
     }
 }

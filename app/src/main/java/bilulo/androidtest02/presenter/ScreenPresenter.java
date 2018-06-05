@@ -1,10 +1,7 @@
 package bilulo.androidtest02.presenter;
 
-import android.util.Log;
-
-import com.google.gson.Gson;
-
 import bilulo.androidtest02.data.Screen;
+import bilulo.androidtest02.data.ScreenResponse;
 import bilulo.androidtest02.data.ScreenInteractor;
 import bilulo.androidtest02.ui.InvestmentView;
 import retrofit2.Call;
@@ -14,7 +11,7 @@ import retrofit2.Response;
 public class ScreenPresenter {
     InvestmentView investmentView;
     private ScreenInteractor screenInteractor;
-    private Screen mScreen;
+    private ScreenResponse mScreenResponse;
     private static final String LOG_TAG = ScreenPresenter.class.getSimpleName();
 
     public ScreenPresenter(ScreenInteractor interactor) {
@@ -30,17 +27,17 @@ public class ScreenPresenter {
     }
 
     public void fetchScreenTask() {
-        screenInteractor.fetchScreen().enqueue(new Callback<Screen>() {
+        screenInteractor.fetchScreen().enqueue(new Callback<ScreenResponse>() {
             @Override
-            public void onResponse(Call<Screen> call, Response<Screen> response) {
+            public void onResponse(Call<ScreenResponse> call, Response<ScreenResponse> response) {
                 if (investmentView!=null)
-                mScreen = response.body();
-                Log.w("JSON =",new Gson().toJson(response));
-                investmentView.updateUI(mScreen);
+                mScreenResponse = response.body();
+                Screen screen = mScreenResponse.getScreen();
+                investmentView.updateUI(screen);
             }
 
             @Override
-            public void onFailure(Call<Screen> call, Throwable t) {
+            public void onFailure(Call<ScreenResponse> call, Throwable t) {
 
             }
         });

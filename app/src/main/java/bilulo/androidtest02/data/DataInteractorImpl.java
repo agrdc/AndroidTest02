@@ -21,7 +21,7 @@ public class DataInteractorImpl implements DataInteractor {
     }
 
     @Override
-    public Call<Data> fetchCells() {
+    public Call<CellResponse> fetchCells() {
         return dataInteractor.fetchCells();
     }
 }

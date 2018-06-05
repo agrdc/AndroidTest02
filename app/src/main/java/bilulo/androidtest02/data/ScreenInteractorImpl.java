@@ -21,7 +21,7 @@ public class ScreenInteractorImpl implements ScreenInteractor {
     }
 
     @Override
-    public Call<Screen> fetchScreen() {
+    public Call<ScreenResponse> fetchScreen() {
         return screenInteractor.fetchScreen();
     }
 }

@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
-import bilulo.androidtest02.data.Data;
+import bilulo.androidtest02.data.CellResponse;
 import bilulo.androidtest02.data.DataInteractor;
 import bilulo.androidtest02.ui.ContactsView;
 import retrofit2.Call;
@@ -15,7 +15,7 @@ public class DataPresenter {
 
     ContactsView contactsView;
     private DataInteractor dataInteractor;
-    private Data mData;
+    private CellResponse mCellResponse;
 
     public DataPresenter(DataInteractor interactor) {
         dataInteractor = interactor;
@@ -30,18 +30,18 @@ public class DataPresenter {
     }
 
     public void fetchDataTask() {
-        dataInteractor.fetchCells().enqueue(new Callback<Data>() {
+        dataInteractor.fetchCells().enqueue(new Callback<CellResponse>() {
             @Override
-            public void onResponse(Call<Data> call, Response<Data> response) {
+            public void onResponse(Call<CellResponse> call, Response<CellResponse> response) {
                 if (contactsView!=null) {
                     Log.w("JSON2 =",new Gson().toJson(response));
-                    mData = response.body();
-                    contactsView.updateUI(mData);
+                    mCellResponse = response.body();
+                    contactsView.updateUI(mCellResponse);
                 }
             }
 
             @Override
-            public void onFailure(Call<Data> call, Throwable t) {
+            public void onFailure(Call<CellResponse> call, Throwable t) {
 
             }
         });

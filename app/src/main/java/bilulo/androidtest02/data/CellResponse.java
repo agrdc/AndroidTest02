@@ -5,10 +5,10 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 
-public class Data implements Parcelable {
+public class CellResponse implements Parcelable {
     private ArrayList<Cell> cells;
 
-    public Data() {
+    public CellResponse() {
     }
 
     public ArrayList<Cell> getCells() {
@@ -29,20 +29,20 @@ public class Data implements Parcelable {
         dest.writeList(this.cells);
     }
 
-    protected Data(Parcel in) {
+    protected CellResponse(Parcel in) {
         this.cells = new ArrayList<Cell>();
         in.readList(this.cells, Cell.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<Data> CREATOR = new Parcelable.Creator<Data>() {
+    public static final Parcelable.Creator<CellResponse> CREATOR = new Parcelable.Creator<CellResponse>() {
         @Override
-        public Data createFromParcel(Parcel source) {
-            return new Data(source);
+        public CellResponse createFromParcel(Parcel source) {
+            return new CellResponse(source);
         }
 
         @Override
-        public Data[] newArray(int size) {
-            return new Data[size];
+        public CellResponse[] newArray(int size) {
+            return new CellResponse[size];
         }
     };
 }

@@ -4,16 +4,12 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,7 +18,7 @@ import java.util.ArrayList;
 
 import bilulo.androidtest02.R;
 import bilulo.androidtest02.data.Cell;
-import bilulo.androidtest02.data.Data;
+import bilulo.androidtest02.data.CellResponse;
 import bilulo.androidtest02.data.DataInteractor;
 import bilulo.androidtest02.data.DataInteractorImpl;
 import bilulo.androidtest02.presenter.DataPresenter;
@@ -77,8 +73,8 @@ public class ContactsFragment extends Fragment implements ContactsView {
     }
 
     @Override
-    public void updateUI(Data data) {
-        ArrayList<Cell> cells = data.getCells();
+    public void updateUI(CellResponse cellResponse) {
+        ArrayList<Cell> cells = cellResponse.getCells();
         Context context = getContext();
         mHiddenTvIds = new int[cells.size()];
         mHiddenEtIds = new int[cells.size()];

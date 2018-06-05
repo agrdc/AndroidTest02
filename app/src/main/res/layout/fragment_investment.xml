@@ -41,8 +41,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline09"
+            app:layout_constraintStart_toStartOf="@+id/guideline01"
             app:layout_constraintTop_toBottomOf="@+id/tv_title"
             tools:text="TextView" />
 
@@ -63,11 +63,12 @@
             android:id="@+id/tv_definition"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:gravity="center"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline095"
+            app:layout_constraintStart_toStartOf="@+id/guideline005"
             app:layout_constraintTop_toBottomOf="@+id/tv_what_is"
             tools:text="TextView" />
 
@@ -79,6 +80,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            app:layout_constrainedHeight="false"
+            app:layout_constrainedWidth="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_definition"
@@ -303,20 +306,20 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_cdi_value_month" />
 
         <TextView
-            android:id="@+id/tv_fund_value_twelve_years"
+            android:id="@+id/tv_fund_value_twelve_months"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="TextView"
-            app:layout_constraintEnd_toStartOf="@+id/tv_cdi_value_twelve_years"
+            app:layout_constraintEnd_toStartOf="@+id/tv_cdi_value_twelve_months"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/guideline05"
             app:layout_constraintStart_toStartOf="@+id/guideline05"
             app:layout_constraintTop_toBottomOf="@+id/tv_fund_value_year" />
 
         <TextView
-            android:id="@+id/tv_cdi_value_twelve_years"
+            android:id="@+id/tv_cdi_value_twelve_months"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -324,7 +327,7 @@
             android:text="TextView"
             app:layout_constraintEnd_toStartOf="@+id/guideline095"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tv_fund_value_twelve_years"
+            app:layout_constraintStart_toEndOf="@+id/tv_fund_value_twelve_months"
             app:layout_constraintTop_toBottomOf="@+id/tv_cdi_value_year" />
 
         <TextView
@@ -342,7 +345,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/tv_cdi_value_twelve_years"
+            app:layout_constraintStart_toStartOf="@+id/tv_cdi_value_twelve_months"
             app:layout_constraintTop_toBottomOf="@+id/tv_twelve_months" />
 
         <TextView
@@ -409,7 +412,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_info_name_04" />
 
         <TextView
-            android:id="@+id/textVtv_info_data_05"
+            android:id="@+id/tv_info_data_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -432,8 +435,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/textVtv_info_data_05"
-            app:layout_constraintTop_toBottomOf="@+id/textVtv_info_data_05" />
+            app:layout_constraintStart_toStartOf="@+id/tv_info_data_05"
+            app:layout_constraintTop_toBottomOf="@+id/tv_info_data_05" />
 
         <TextView
             android:id="@+id/tv_info_name_07"

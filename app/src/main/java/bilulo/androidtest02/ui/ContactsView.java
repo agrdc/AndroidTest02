@@ -1,7 +1,7 @@
 package bilulo.androidtest02.ui;
 
-import bilulo.androidtest02.data.Data;
+import bilulo.androidtest02.data.CellResponse;
 
 public interface ContactsView {
-    void updateUI(Data data);
+    void updateUI(CellResponse cellResponse);
 }
