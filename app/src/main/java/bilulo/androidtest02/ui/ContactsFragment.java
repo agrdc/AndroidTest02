@@ -6,10 +6,13 @@ import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,6 +34,8 @@ public class ContactsFragment extends Fragment implements ContactsView {
     private int[] mHiddenEtIds;
 
     private DataPresenter mDataPresenter;
+
+    private static final String LOG_TAG = ContactsFragment.class.getSimpleName();
 
     @BindView (R.id.cl_contact)
     ConstraintLayout constraintLayout;
@@ -85,7 +90,13 @@ public class ContactsFragment extends Fragment implements ContactsView {
                 int type = c.getType();
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 linearLayout.setOrientation(LinearLayout.VERTICAL);
-                params.setMargins(0,(int)c.getTopSpacing(),0,0);
+                int topSpacing = (int) c.getTopSpacing();
+
+                // sorry, these different top spacings are killing me!
+                if (topSpacing!=35)
+                    topSpacing = 35;
+
+                params.setMargins(0,topSpacing,0,0);
                 switch (type) {
                     case 1:
                         TextView textView = new TextView(context);
@@ -112,8 +123,32 @@ public class ContactsFragment extends Fragment implements ContactsView {
                         }
                         linearLayout.addView(textView);
                         linearLayout.addView(editText);
+                        break;
                     case 2:
-
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        CheckBox checkBox = new CheckBox(context);
+                        checkBox.setId(ViewStub.generateViewId());
+                        checkBox.setText(c.getMessage());
+                        checkBox.setLayoutParams(params);
+                        if (c.isHidden()) {
+                            checkBox.setVisibility(View.GONE);
+                        }
+                        linearLayout.addView(checkBox);
+                        break;
+                    case 5:
+                        Button button = new Button(context);
+                        button.setId(ViewStub.generateViewId());
+                        button.setLayoutParams(params);
+                        button.setText(c.getMessage());
+                        if (c.isHidden()) {
+                            button.setVisibility(View.GONE);
+                        }
+                        button.setBackgroundResource(R.drawable.btn_background_round);
+                        linearLayout.addView(button);
+                        break;
                 }
             }
         }
