@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <ScrollView
+        android:id="@+id/sv_investment"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <android.support.constraint.ConstraintLayout
             android:id="@+id/cl_content"
             android:layout_width="match_parent"
             android:layout_height="0dp">
-
-            <ProgressBar
-                android:id="@+id/pb_loading"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_investment"
@@ -29,7 +30,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Fragment Investment"
+                android:text="@string/investment"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -223,7 +224,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_month_table"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_fund_title" />
 
@@ -232,7 +233,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_twelve_months_table"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_year" />
 
@@ -241,7 +242,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_year_table"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_month" />
 
@@ -251,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
+                android:text="@string/tv_fund_table"
                 app:layout_constraintStart_toEndOf="@+id/guideline05"
                 app:layout_constraintStart_toStartOf="@+id/guideline05"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_title" />
@@ -262,7 +263,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
+                android:text="@string/tv_CDI_table"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_title" />
 
@@ -271,7 +272,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="@+id/tv_fund_title"
                 app:layout_constraintTop_toBottomOf="@+id/tv_fund_title" />
 
@@ -281,7 +281,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_cdi_title" />
 
@@ -290,7 +289,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="@+id/tv_fund_value_month"
                 app:layout_constraintTop_toBottomOf="@+id/tv_fund_value_month" />
 
@@ -300,7 +298,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_cdi_value_month" />
 
@@ -309,7 +306,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="@+id/tv_fund_value_year"
                 app:layout_constraintTop_toBottomOf="@+id/tv_fund_value_year" />
 
@@ -319,7 +315,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_cdi_value_year" />
 
@@ -328,7 +323,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_twelve_months" />
 
@@ -338,7 +332,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_twelve_months" />
 
@@ -347,7 +340,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_name_02" />
 
@@ -357,7 +349,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_data_01" />
 
@@ -366,7 +357,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_name_01" />
 
@@ -376,7 +366,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_data_02" />
 
@@ -385,7 +374,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_name_03" />
 
@@ -395,7 +383,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_data_03" />
 
@@ -404,7 +391,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_name_04" />
 
@@ -414,7 +400,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_data_04" />
 
@@ -423,7 +408,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_name_05" />
 
@@ -433,7 +417,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_data_05" />
 
@@ -442,7 +425,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_name_06" />
 
@@ -452,7 +434,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_data_06" />
 
@@ -461,7 +442,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_name_07" />
 
@@ -471,7 +451,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_download"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_info_data_07" />
 
@@ -480,7 +460,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_name_01" />
 
@@ -490,7 +469,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_download"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_data_01" />
 
@@ -499,7 +478,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_name_02" />
 
@@ -509,7 +487,7 @@
                 android:layout_height="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_download"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_data_02" />
 
@@ -518,7 +496,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_name_03" />
 
@@ -528,7 +505,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_download"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_data_03" />
 
@@ -537,7 +514,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline005"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_name_04" />
 
@@ -547,7 +523,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/tv_download"
                 app:layout_constraintEnd_toStartOf="@+id/guideline095"
                 app:layout_constraintTop_toBottomOf="@+id/tv_downinfo_data_04" />
 
@@ -558,11 +534,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/btn_background_round"
+                android:fontFamily="@font/dinpro_medium"
+                android:gravity="bottom|center_horizontal"
                 android:paddingBottom="16dp"
+                android:text="@string/btn_invest"
+                android:textAlignment="gravity"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@id/guideline09"
                 app:layout_constraintHorizontal_bias="0.481"
                 app:layout_constraintStart_toStartOf="@+id/guideline01"
                 app:layout_constraintTop_toBottomOf="@id/tv_downinfo_data_05" />
-
         </android.support.constraint.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+</RelativeLayout>

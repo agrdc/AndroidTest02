@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AndroidTest02</string>
+    <string name="contact">Contato</string>
+    <string name="investment">Investimento</string>
+    <string name="tv_fund_table">Fundo</string>
+    <string name="tv_CDI_table">CDI</string>
+    <string name="tv_month_table">No mês</string>
+    <string name="tv_year_table">No ano</string>
+    <string name="tv_twelve_months_table">12 meses</string>
+    <string name="tv_download">Baixar</string>
+    <string name="btn_invest">Investir</string>
+    <string name="btn_send">Enviar</string>
+
+
+
+
 </resources>
