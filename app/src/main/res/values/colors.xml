@@ -7,6 +7,7 @@
 
 
     <color name="colorRed">#FF0000</color>
+    <color name="colorBlack">#030203</color>
     <color name="colorDarkerRed">#D00000</color>
     <color name="colorRisk1">#34f948</color>
     <color name="colorRisk2">#42f4a4</color>
