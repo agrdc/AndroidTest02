@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
+import javax.inject.Inject;
+
 import bilulo.androidtest02.data.CellResponse;
 import bilulo.androidtest02.data.DataInteractor;
 import bilulo.androidtest02.ui.ContactsView;
@@ -17,6 +19,7 @@ public class DataPresenter {
     private DataInteractor dataInteractor;
     private CellResponse mCellResponse;
 
+    @Inject
     public DataPresenter(DataInteractor interactor) {
         dataInteractor = interactor;
     }

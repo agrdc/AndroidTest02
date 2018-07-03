@@ -21,7 +21,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+
 import bilulo.androidtest02.R;
+import bilulo.androidtest02.dagger.App;
 import bilulo.androidtest02.data.Cell;
 import bilulo.androidtest02.data.CellResponse;
 import bilulo.androidtest02.data.DataInteractor;
@@ -51,15 +54,16 @@ public class ContactsFragment extends Fragment implements ContactsView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_contact, container, false);
         ButterKnife.bind(this, rootView);
-        DataInteractor interactor = new DataInteractorImpl();
-        mDataPresenter = new DataPresenter(interactor);
-        mDataPresenter.bind(this);
         return rootView;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        ((App) getActivity().getApplication()).getAppComponent().inject(this);
+        mDataPresenter.bind(this);
+
         if (savedInstanceState!=null && savedInstanceState.getParcelable(key_bundle)!=null) {
             mCellResponse = savedInstanceState.getParcelable(key_bundle);
             updateUI(mCellResponse);
@@ -170,5 +174,10 @@ public class ContactsFragment extends Fragment implements ContactsView {
         if (mCellResponse!=null)
         outState.putParcelable(key_bundle,mCellResponse);
         super.onSaveInstanceState(outState);
+    }
+
+    @Inject
+    public void setPresenter(DataPresenter presenter) {
+        mDataPresenter = presenter;
     }
 }

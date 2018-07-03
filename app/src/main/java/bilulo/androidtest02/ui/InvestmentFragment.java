@@ -12,7 +12,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+
 import bilulo.androidtest02.R;
+import bilulo.androidtest02.dagger.App;
 import bilulo.androidtest02.data.DownInfo;
 import bilulo.androidtest02.data.Info;
 import bilulo.androidtest02.data.Month;
@@ -22,6 +25,7 @@ import bilulo.androidtest02.data.ScreenInteractor;
 import bilulo.androidtest02.data.ScreenInteractorImpl;
 import bilulo.androidtest02.data.TwelveMonths;
 import bilulo.androidtest02.data.Year;
+import bilulo.androidtest02.presenter.DataPresenter;
 import bilulo.androidtest02.presenter.ScreenPresenter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -77,15 +81,14 @@ public class InvestmentFragment extends Fragment implements InvestmentView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_investment, container,false);
         ButterKnife.bind(this,rootView);
-        ScreenInteractor interactor = new ScreenInteractorImpl();
-        mScreenPresenter = new ScreenPresenter(interactor);
-        mScreenPresenter.bind(this);
         return rootView;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        ((App) getActivity().getApplication()).getAppComponent().inject(this);
+        mScreenPresenter.bind(this);
         if (savedInstanceState!=null && savedInstanceState.getParcelable(key_bundle)!=null) {
             mScreen = savedInstanceState.getParcelable(key_bundle);
             updateUI(mScreen);
@@ -156,5 +159,10 @@ public class InvestmentFragment extends Fragment implements InvestmentView {
         if (mScreen!=null)
         outState.putParcelable(key_bundle,mScreen);
         super.onSaveInstanceState(outState);
+    }
+
+    @Inject
+    public void setPresenter(ScreenPresenter presenter) {
+        mScreenPresenter = presenter;
     }
 }

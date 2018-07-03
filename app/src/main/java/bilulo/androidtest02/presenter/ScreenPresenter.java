@@ -1,5 +1,7 @@
 package bilulo.androidtest02.presenter;
 
+import javax.inject.Inject;
+
 import bilulo.androidtest02.data.Screen;
 import bilulo.androidtest02.data.ScreenResponse;
 import bilulo.androidtest02.data.ScreenInteractor;
@@ -14,6 +16,7 @@ public class ScreenPresenter {
     private ScreenResponse mScreenResponse;
     private static final String LOG_TAG = ScreenPresenter.class.getSimpleName();
 
+    @Inject
     public ScreenPresenter(ScreenInteractor interactor) {
         screenInteractor = interactor;
     }
